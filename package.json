@@ -1,0 +1,128 @@
+{
+  "name": "tb-lint",
+  "displayName": "TB_LINT",
+  "description": "SystemVerilog linting extension integrating BTA's TB_LINT framework",
+  "version": "1.0.0",
+  "publisher": "bta-design-services",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Linters",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "systemverilog",
+    "verilog",
+    "hdl",
+    "verification",
+    "linting",
+    "documentation"
+  ],
+  "activationEvents": [
+    "onLanguage:systemverilog",
+    "onLanguage:verilog",
+    "onCommand:tb_lint.lintCurrentFile",
+    "onCommand:tb_lint.lintWorkspace"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tb_lint.lintCurrentFile",
+        "title": "TB_LINT: Lint Current File",
+        "description": "Run TB_LINT on the current file"
+      },
+      {
+        "command": "tb_lint.lintWorkspace",
+        "title": "TB_LINT: Lint Workspace",
+        "description": "Run TB_LINT on all files in the workspace"
+      },
+      {
+        "command": "tb_lint.clearDiagnostics",
+        "title": "TB_LINT: Clear Diagnostics",
+        "description": "Clear all TB_LINT diagnostics from the editor"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "tb_lint.lintCurrentFile",
+        "key": "ctrl+shift+l",
+        "mac": "cmd+shift+l",
+        "when": "editorLangId == systemverilog || editorLangId == verilog"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "TB_LINT",
+      "properties": {
+        "tb_lint.pythonPath": {
+          "type": "string",
+          "default": "python3",
+          "description": "Path to Python executable. Use 'python' on Windows if python3 is not available"
+        },
+        "tb_lint.tbLintPath": {
+          "type": "string",
+          "default": "tb_lint.py",
+          "description": "Path to tb_lint.py. If relative, searches in workspace root"
+        },
+        "tb_lint.configFile": {
+          "type": "string",
+          "default": "",
+          "description": "Optional path to TB_LINT configuration file (lint_config.json)"
+        },
+        "tb_lint.enableOnOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable linting when a file is opened"
+        },
+        "tb_lint.enableOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable linting when a file is saved"
+        },
+        "tb_lint.enableOnChange": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable linting as you type (with 1-second debounce)"
+        },
+        "tb_lint.debounceDelay": {
+          "type": "number",
+          "default": 1000,
+          "description": "Debounce delay in milliseconds for on-change linting"
+        },
+        "tb_lint.autoShowOutput": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically show TB_LINT output channel when linting"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.29.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "vscode": "^1.1.37"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BTA-design-services/vscode-tb-lint"
+  },
+  "bugs": {
+    "url": "https://github.com/BTA-design-services/vscode-tb-lint/issues"
+  }
+}
