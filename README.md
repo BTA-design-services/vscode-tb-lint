@@ -44,7 +44,15 @@ This extension brings powerful linting capabilities directly into your IDE, inte
     - Download the `.vsix` file or build from source.
     - Run `code --install-extension tb-lint-0.1.0.vsix`.
 
-2.  **Configure Paths**:
+2.  **Enable the Extension in VS Code**:
+    - Open VS Code.
+    - Go to the Extensions view by clicking the Extensions icon in the Activity Bar (left sidebar) or press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS).
+    - In the Extensions view, search for "TB_LINT" or "tb-lint".
+    - Find the extension in the list and click the **Enable** button (or **Reload** if it's already installed but disabled).
+    - If the extension was just installed, you may need to reload VS Code. Click the **Reload** button when prompted, or restart VS Code manually.
+    - To verify the extension is enabled, check that it appears in the "Enabled" section of the Extensions view (not in "Disabled").
+
+3.  **Configure Paths**:
     Add the following to your `.vscode/settings.json`:
     ```json
     {
@@ -53,7 +61,7 @@ This extension brings powerful linting capabilities directly into your IDE, inte
     }
     ```
 
-3.  **Verify Setup**:
+4.  **Verify Setup**:
     - Open the Command Palette (`Ctrl+Shift+P`).
     - Run `TB_LINT: Verify Setup`.
 
