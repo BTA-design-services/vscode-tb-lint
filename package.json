@@ -2,7 +2,7 @@
   "name": "tb-lint",
   "displayName": "TB_LINT",
   "description": "SystemVerilog linting extension integrating BTA's TB_LINT framework",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "icon": "bta_logo.jpg",
   "publisher": "BTADesignServicesInc",
   "license": "MIT",
@@ -136,4 +136,5 @@
   "overrides": {
     "undici": "^5.28.4"
   }
+
 }
