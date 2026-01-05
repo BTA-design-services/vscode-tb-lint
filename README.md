@@ -2,7 +2,7 @@
 
 
 # [BTA Design Services](https://www.linkedin.com/company/bta-design-services-inc-/about/) TB_LINT VS Code Extension
-**Version**: 0.0.21
+**Version**: 0.0.22
 
 ## BTA Design Design Verification open-source initiative projects:
 
