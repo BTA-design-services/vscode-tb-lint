@@ -168,7 +168,7 @@ vsce package
 
 ## License
 
-MIT License - Copyright (c) BTA Design Services
+Released under the MIT License. See [LICENSE](https://github.com/BTA-design-services/vscode-tb-lint/blob/main/LICENSE) file for details. - Copyright (c) BTA Design Services
 
 ## Support
 
